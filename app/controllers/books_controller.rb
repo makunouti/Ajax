@@ -38,6 +38,16 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  # BooksControllerのlikeアクション
+def like
+  @book = Book.find(params[:id])
+  current_user.like(@book)
+  respond_to do |format|
+    format.js
+  end
+end
+
+
   private
 
   def book_params

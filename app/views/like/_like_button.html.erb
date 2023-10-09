@@ -1,0 +1,2 @@
+<!-- _like_button.html.erb -->
+<%= link_to "いいね", like_book_path(book), method: :post, remote: true, class: "like-button", id: "like-button-#{book.id}" %>
